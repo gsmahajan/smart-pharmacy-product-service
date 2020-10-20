@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -28,5 +29,11 @@ public class ProductController {
     @GetMapping( path = "/add")
     public void saveProduct(@RequestBody Product productToSave){
         productRepository.save(productToSave);
+    }
+    
+    @GetMapping( path = "/{id}")
+    public Product getProduct(@PathVariable Long id){
+    	System.out.println("searching product for "+id);
+        return productRepository.findById(id).orElse(null);
     }
 }
