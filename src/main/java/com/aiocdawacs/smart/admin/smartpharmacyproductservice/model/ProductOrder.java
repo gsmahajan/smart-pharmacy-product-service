@@ -6,6 +6,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 @Entity
 public class ProductOrder {
@@ -15,11 +18,17 @@ public class ProductOrder {
 	@GeneratedValue(strategy= GenerationType.AUTO)
 	Long id;
 
-	Long productId;
+	@OneToOne
+	@JoinColumn( name = "productId", referencedColumnName = "id")
+	Product product;
 
-	Long distributorId;
+	@ManyToOne
+	@JoinColumn( name = "distributorId", referencedColumnName = "id")
+	Distributor distributor;
 
-	Long pharmasistId;
+	@ManyToOne
+	@JoinColumn(name = "pharmasistId", referencedColumnName = "id")
+	Pharmasist pharmasist;
 
 	LocalDateTime creationDate;
 
@@ -31,18 +40,6 @@ public class ProductOrder {
 		super();
 	}
 
-	public ProductOrder(Long id, Long productId, Long distributorId, Long pharmasistId, LocalDateTime creationDate,
-			Integer quantity, Boolean orderStatus) {
-		super();
-		this.id = id;
-		this.productId = productId;
-		this.distributorId = distributorId;
-		this.pharmasistId = pharmasistId;
-		this.creationDate = creationDate;
-		this.quantity = quantity;
-		this.orderStatus = orderStatus;
-	}
-
 	public Long getId() {
 		return id;
 	}
@@ -51,28 +48,28 @@ public class ProductOrder {
 		this.id = id;
 	}
 
-	public Long getProductId() {
-		return productId;
+	public Product getProduct() {
+		return product;
 	}
 
-	public void setProductId(Long productId) {
-		this.productId = productId;
+	public void setProduct(Product product) {
+		this.product = product;
 	}
 
-	public Long getDistributorId() {
-		return distributorId;
+	public Distributor getDistributor() {
+		return distributor;
 	}
 
-	public void setDistributorId(Long distributorId) {
-		this.distributorId = distributorId;
+	public void setDistributor(Distributor distributor) {
+		this.distributor = distributor;
 	}
 
-	public Long getPharmasistId() {
-		return pharmasistId;
+	public Pharmasist getPharmasist() {
+		return pharmasist;
 	}
 
-	public void setPharmasistId(Long pharmasistId) {
-		this.pharmasistId = pharmasistId;
+	public void setPharmasist(Pharmasist pharmasist) {
+		this.pharmasist = pharmasist;
 	}
 
 	public LocalDateTime getCreationDate() {
