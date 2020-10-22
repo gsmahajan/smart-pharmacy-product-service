@@ -14,71 +14,74 @@ public class Product {
 
     String name;
     String price;
-    String quantity;
+    
     String distributorName;
     String genericName;
-
+    String companyName;
+    
     public Product() {
+    	super();
     }
 
     public Product(Long id){
         this.id = id;
     }
 
-    public Product(Long id, String name, String price, String quantity, String distributorName, String genericName) {
-        this.id = id;
-        this.name = name;
-        this.price = price;
-        this.quantity = quantity;
-        this.distributorName = distributorName;
-        this.genericName = genericName;
-    }
+	public Product(Long id, String name, String price, String distributorName, String genericName, String companyName) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.price = price;
+		this.distributorName = distributorName;
+		this.genericName = genericName;
+		this.companyName = companyName;
+	}
 
-    public Long getId() {
-        return id;
-    }
+	public Long getId() {
+		return id;
+	}
 
-    public String getName() {
-        return name;
-    }
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-    public String getPrice() {
-        return price;
-    }
+	public String getName() {
+		return name;
+	}
 
-    public String getQuantity() {
-        return quantity;
-    }
+	public void setName(String name) {
+		this.name = name;
+	}
 
-    public String getDistributorName() {
-        return distributorName;
-    }
+	public String getPrice() {
+		return price;
+	}
 
-    public String getGenericName() {
-        return genericName;
-    }
+	public void setPrice(String price) {
+		this.price = price;
+	}
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+	public String getDistributorName() {
+		return distributorName;
+	}
 
-    public void setName(String name) {
-        this.name = name;
-    }
+	public void setDistributorName(String distributorName) {
+		this.distributorName = distributorName;
+	}
 
-    public void setPrice(String price) {
-        this.price = price;
-    }
+	public String getGenericName() {
+		return genericName;
+	}
 
-    public void setQuantity(String quantity) {
-        this.quantity = quantity;
-    }
+	public void setGenericName(String genericName) {
+		this.genericName = genericName;
+	}
 
-    public void setDistributorName(String distributorName) {
-        this.distributorName = distributorName;
-    }
+	public String getCompanyName() {
+		return companyName;
+	}
 
-    public void setGenericName(String genericName) {
-        this.genericName = genericName;
-    }
+	public void setCompanyName(String companyName) {
+		this.companyName = companyName;
+	}
 }

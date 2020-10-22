@@ -1,13 +1,42 @@
-create table product (
-	id INT,
-	name VARCHAR(200),
-	price INT,
-	quantity INT,
-	distributor_name VARCHAR(200),
-	generic_name VARCHAR(600)
-);
+	create table product (
+		id INT,
+		name VARCHAR(200),
+		price INT,
+		distributor_name VARCHAR(200),
+		generic_name VARCHAR(600),
+		company_name VARCHAR(500)
+	);
 
-DROP TABLE IF EXISTS SPRING_SESSION_ATTRIBUTES;
+	create table pharmasist (
+		id INT,
+		pharmasist_name VARCHAR(50),
+		pharmasist_address VARCHAR(50),
+		email VARCHAR(50)
+	);
+
+	create table stockist_distrubutor (
+		id INT,
+		stockist_name VARCHAR(50),
+		address VARCHAR(50),
+		email VARCHAR(50),
+		product_id INT,
+		available_quantity INT
+	);
+	
+	create table product_order (
+		id INT,
+		product_id INT,
+		distributor_id INT,
+		pharmasist_id INT,
+		creation_date TIMESTAMP default CURRENT_TIMESTAMP,
+		quantity INT,
+		order_status boolean
+	);
+	
+	
+	
+/*
+  DROP TABLE IF EXISTS SPRING_SESSION_ATTRIBUTES;
   DROP TABLE IF EXISTS SPRING_SESSION;
 
   CREATE TABLE SPRING_SESSION (
@@ -32,4 +61,4 @@ DROP TABLE IF EXISTS SPRING_SESSION_ATTRIBUTES;
     CONSTRAINT SPRING_SESSION_ATTRIBUTES_PK PRIMARY KEY (SESSION_PRIMARY_ID, ATTRIBUTE_NAME),
     CONSTRAINT SPRING_SESSION_ATTRIBUTES_FK FOREIGN KEY (SESSION_PRIMARY_ID) REFERENCES SPRING_SESSION(PRIMARY_ID) ON DELETE CASCADE
   );
-  
+  */

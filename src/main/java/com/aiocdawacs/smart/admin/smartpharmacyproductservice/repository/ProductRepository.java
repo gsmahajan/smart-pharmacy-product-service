@@ -1,12 +1,15 @@
 package com.aiocdawacs.smart.admin.smartpharmacyproductservice.repository;
 
-import com.aiocdawacs.smart.admin.smartpharmacyproductservice.model.Product;
-import org.springframework.data.repository.CrudRepository;
-
 import java.util.List;
 
-public interface ProductRepository extends CrudRepository<Product, Long> {
+import org.springframework.data.repository.PagingAndSortingRepository;
+import org.springframework.stereotype.Repository;
 
-    @Override
-    List<Product> findAll();
+import com.aiocdawacs.smart.admin.smartpharmacyproductservice.model.Product;
+
+@Repository
+public interface ProductRepository extends PagingAndSortingRepository<Product, Long> {
+
+	@Override
+	List<Product> findAll();	
 }
