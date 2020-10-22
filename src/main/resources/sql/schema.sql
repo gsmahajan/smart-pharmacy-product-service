@@ -42,17 +42,11 @@ CREATE TABLE product_order
      PRIMARY KEY (id) 
   ); 
   
-ALTER TABLE product_order 
-  ADD CONSTRAINT fks02c8oolwc3if7rcitdjvgkk7 FOREIGN KEY (distributor_id) 
-  REFERENCES stockist_distributor; 
+ALTER TABLE product_order ADD CONSTRAINT fks02c8oolwc3if7rcitdjvgkk7 FOREIGN KEY (distributor_id) REFERENCES stockist_distributor; 
 
-ALTER TABLE product_order 
-  ADD CONSTRAINT fk3k67myv9j6bcru2r70r7jbtel FOREIGN KEY (pharmasist_id) 
-  REFERENCES pharmasist; 
+ALTER TABLE product_order ADD CONSTRAINT fk3k67myv9j6bcru2r70r7jbtel FOREIGN KEY (pharmasist_id) REFERENCES pharmasist; 
 
-ALTER TABLE product_order 
-  ADD CONSTRAINT fkh73acsd9s5wp6l0e55td6jr1m FOREIGN KEY (product_id) REFERENCES 
-  product; 
+ALTER TABLE product_order ADD CONSTRAINT fkh73acsd9s5wp6l0e55td6jr1m FOREIGN KEY (product_id) REFERENCES product; 
   
 	
 /*

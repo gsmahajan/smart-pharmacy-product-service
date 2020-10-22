@@ -10,7 +10,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
+import lombok.ToString;
+
 @Entity
+@ToString
 public class ProductOrder {
 
 
@@ -95,4 +98,4 @@ public class ProductOrder {
 	public void setOrderStatus(Boolean orderStatus) {
 		this.orderStatus = orderStatus;
 	}
-}
+}	

@@ -1,4 +1,4 @@
-package com.aiocdawacs.smart.admin.smartpharmacyproductservice;
+package com.aiocdawacs.smart.admin.smartpharmacyproductservice.config;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,7 +28,7 @@ public class ExceptionControllerAdvice {
 	@ExceptionHandler(value = { Exception.class })
 	public ResponseEntity<Object> handleException(Exception ex) {
 		LOGGER.error("Exception: ", ex.getMessage());
-		publisher.publishEvent(new String("error occured in the smart admin :" + ex.getMessage()));
+		publisher.publishEvent(new String("error occured in the smart pharmacy :" + ex.getMessage()));
 		return new ResponseEntity<Object>(ex.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
 	}
 }
