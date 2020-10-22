@@ -1,53 +1,59 @@
-	create table product (
-		id INT,
-		name VARCHAR(200),
-		price INT,
-		distributor_name VARCHAR(200),
-		generic_name VARCHAR(600),
-		company_name VARCHAR(500)
-	);
-
-	create table pharmasist (
-		id INT,
-		pharmasist_name VARCHAR(50),
-		pharmasist_address VARCHAR(50),
-		email VARCHAR(50)
-	);
-
-	create table stockist_distrubutor (
-		id INT,
-		stockist_name VARCHAR(50),
-		address VARCHAR(50),
-		email VARCHAR(50),
-		product_id INT,
-		available_quantity INT
-	);
-	
-	create table product_order (
-		id INT,
-		product_id INT,
-		distributor_id INT,
-		pharmasist_id INT,
-		creation_date TIMESTAMP default CURRENT_TIMESTAMP,
-		quantity INT,
-		order_status boolean
-	);
-
-	/* hibernate wins :) */
- drop table if exists pharmasist CASCADE ;
- drop table if exists product CASCADE ;
- drop table if exists product_order CASCADE ;
- drop table if exists stockist_distrubutor CASCADE ;
- drop sequence if exists hibernate_sequence;
- create sequence hibernate_sequence start with 1 increment by 1;
- create table pharmasist (id bigint not null, email varchar(255), pharmasist_address varchar(255), pharmasist_name varchar(255), primary key (id));
- create table product (id bigint not null, company_name varchar(512), distributor_name varchar(255), generic_name varchar(600), name varchar(255), price varchar(255), primary key (id));
- create table product_order (id bigint not null, creation_date timestamp default current_timestamp, order_status boolean, quantity integer, distributor_id bigint, pharmasist_id bigint, product_id bigint, primary key (id));
- create table stockist_distrubutor (id bigint not null, address varchar(255), available_quantity integer, email varchar(255), product_id bigint, stockist_name varchar(255), primary key (id));
- alter table product_order add constraint FKs02c8oolwc3if7rcitdjvgkk7 foreign key (distributor_id) references stockist_distrubutor;
- alter table product_order add constraint FK3k67myv9j6bcru2r70r7jbtel foreign key (pharmasist_id) references pharmasist;
- alter table product_order add constraint FKh73acsd9s5wp6l0e55td6jr1m foreign key (product_id) references product;
  
+ CREATE TABLE pharmasist 
+  ( 
+     id                 BIGINT NOT NULL, 
+     email              VARCHAR(255), 
+     pharmasist_address VARCHAR(255), 
+     pharmasist_name    VARCHAR(255), 
+     PRIMARY KEY (id) 
+  ); 
+
+CREATE TABLE product 
+  ( 
+     id               BIGINT NOT NULL, 
+     company_name     VARCHAR(512), 
+     distributor_name VARCHAR(255), 
+     generic_name     VARCHAR(600), 
+     NAME             VARCHAR(255), 
+     price            VARCHAR(255), 
+     PRIMARY KEY (id) 
+  ); 
+
+CREATE TABLE stockist_distrubutor 
+  ( 
+     id                 BIGINT NOT NULL, 
+     address            VARCHAR(255), 
+     available_quantity INTEGER, 
+     email              VARCHAR(255), 
+     product_id         BIGINT, 
+     stockist_name      VARCHAR(255), 
+     PRIMARY KEY (id) 
+  ); 
+
+CREATE TABLE product_order 
+  ( 
+     id             BIGINT NOT NULL, 
+     creation_date  TIMESTAMP DEFAULT CURRENT_TIMESTAMP, 
+     order_status   BOOLEAN, 
+     quantity       INTEGER, 
+     distributor_id BIGINT, 
+     pharmasist_id  BIGINT, 
+     product_id     BIGINT, 
+     PRIMARY KEY (id) 
+  ); 
+  
+ALTER TABLE product_order 
+  ADD CONSTRAINT fks02c8oolwc3if7rcitdjvgkk7 FOREIGN KEY (distributor_id) 
+  REFERENCES stockist_distrubutor; 
+
+ALTER TABLE product_order 
+  ADD CONSTRAINT fk3k67myv9j6bcru2r70r7jbtel FOREIGN KEY (pharmasist_id) 
+  REFERENCES pharmasist; 
+
+ALTER TABLE product_order 
+  ADD CONSTRAINT fkh73acsd9s5wp6l0e55td6jr1m FOREIGN KEY (product_id) REFERENCES 
+  product; 
+  
 	
 /*
   DROP TABLE IF EXISTS SPRING_SESSION_ATTRIBUTES;

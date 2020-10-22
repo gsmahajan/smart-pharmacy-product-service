@@ -7,5 +7,4 @@ import com.aiocdawacs.smart.admin.smartpharmacyproductservice.model.ProductOrder
 
 @Repository
 public interface ProductOrderRepository extends CrudRepository<ProductOrder, Long> {
-
 }
