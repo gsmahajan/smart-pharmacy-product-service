@@ -19,7 +19,7 @@ CREATE TABLE product
      PRIMARY KEY (id) 
   ); 
 
-CREATE TABLE stockist_distrubutor 
+CREATE TABLE stockist_distributor 
   ( 
      id                 BIGINT NOT NULL, 
      address            VARCHAR(255), 
@@ -44,7 +44,7 @@ CREATE TABLE product_order
   
 ALTER TABLE product_order 
   ADD CONSTRAINT fks02c8oolwc3if7rcitdjvgkk7 FOREIGN KEY (distributor_id) 
-  REFERENCES stockist_distrubutor; 
+  REFERENCES stockist_distributor; 
 
 ALTER TABLE product_order 
   ADD CONSTRAINT fk3k67myv9j6bcru2r70r7jbtel FOREIGN KEY (pharmasist_id) 
