@@ -1,5 +1,10 @@
- 
- CREATE TABLE pharmasist 
+-- DROP database AWACS_SMART_PHARMACY;
+
+-- CREATE DATABASE AWACS_SMART_PHARMACY;
+
+-- USE AWACS_SMART_PHARMACY;
+
+CREATE TABLE pharmasist 
   ( 
      id                 BIGINT NOT NULL, 
      email              VARCHAR(255), 
@@ -39,15 +44,12 @@ CREATE TABLE product_order
      distributor_id BIGINT, 
      pharmasist_id  BIGINT, 
      product_id     BIGINT, 
-     PRIMARY KEY (id) 
+     PRIMARY KEY (id),
+     FOREIGN KEY (distributor_id) REFERENCES stockist_distributor(id) ON DELETE CASCADE,
+	 FOREIGN KEY (pharmasist_id) REFERENCES pharmasist(id) ON DELETE CASCADE,
+	 FOREIGN KEY (product_id) REFERENCES product(id) ON DELETE CASCADE
   ); 
-  
-ALTER TABLE product_order ADD CONSTRAINT fks02c8oolwc3if7rcitdjvgkk7 FOREIGN KEY (distributor_id) REFERENCES stockist_distributor; 
-
-ALTER TABLE product_order ADD CONSTRAINT fk3k67myv9j6bcru2r70r7jbtel FOREIGN KEY (pharmasist_id) REFERENCES pharmasist; 
-
-ALTER TABLE product_order ADD CONSTRAINT fkh73acsd9s5wp6l0e55td6jr1m FOREIGN KEY (product_id) REFERENCES product; 
-  
+   
 	
 /*
   DROP TABLE IF EXISTS SPRING_SESSION_ATTRIBUTES;
