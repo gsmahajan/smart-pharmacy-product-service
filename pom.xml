@@ -93,7 +93,7 @@
 							<buildArgs>
 								-Dspring.graal.mode=initialization-only
 								-Dspring.graal.dump-config=classpath:computed-reflect-config.json
-								-Dspring.graal.verbose=true -Dspring.graal.skip-logback=false
+								-Dspring.graal.verbose=true -Dspring.graal.skip-logback=true
 								--initialize-at-run-time=org.springframework.data.r2dbc.connectionfactory.ConnectionFactoryUtils
 								--initialize-at-build-time=io.r2dbc.spi.IsolationLevel,io.r2dbc.spi
 								--initialize-at-build-time=io.r2dbc.spi.ConstantPool,io.r2dbc.spi.Assert,io.r2dbc.spi.ValidationDepth
