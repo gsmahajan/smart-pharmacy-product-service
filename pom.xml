@@ -16,6 +16,9 @@
 	<description>Smart Pharmacy</description>
 
 	<properties>
+		<start-class>
+			com.aiocdawacs.smart.admin.smartpharmacyproductservice.SmartPharmacyProductServiceApplication
+		</start-class>
 		<java.version>1.8</java.version>
 	</properties>
 
@@ -88,8 +91,9 @@
 						<version>20.0.0</version>
 						<configuration>
 							<buildArgs>
-								-Dspring.graal.mode=initialization-only -Dspring.graal.dump-config=/tmp/computed-reflect-config.json
-								-Dspring.graal.verbose=true -Dspring.graal.skip-logback=true
+								-Dspring.graal.mode=initialization-only
+								-Dspring.graal.dump-config=classpath:computed-reflect-config.json
+								-Dspring.graal.verbose=true -Dspring.graal.skip-logback=false
 								--initialize-at-run-time=org.springframework.data.r2dbc.connectionfactory.ConnectionFactoryUtils
 								--initialize-at-build-time=io.r2dbc.spi.IsolationLevel,io.r2dbc.spi
 								--initialize-at-build-time=io.r2dbc.spi.ConstantPool,io.r2dbc.spi.Assert,io.r2dbc.spi.ValidationDepth
