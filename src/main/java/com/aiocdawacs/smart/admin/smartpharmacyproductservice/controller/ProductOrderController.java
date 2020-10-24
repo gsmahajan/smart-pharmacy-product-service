@@ -1,3 +1,4 @@
+
 package com.aiocdawacs.smart.admin.smartpharmacyproductservice.controller;
 
 import java.util.Arrays;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.aiocdawacs.smart.admin.smartpharmacyproductservice.config.ProductorderNotFoundException;
 import com.aiocdawacs.smart.admin.smartpharmacyproductservice.model.ProductOrder;
 import com.aiocdawacs.smart.admin.smartpharmacyproductservice.repository.ProductOrderRepository;
 
@@ -29,8 +31,9 @@ public class ProductOrderController {
 	}
 
 	@GetMapping("/{orderId}")
-	public ResponseEntity<ProductOrder> getOrder(@PathVariable Long orderId ){
-		return ResponseEntity.of(Optional.ofNullable(this.productOrderRepository.findById(orderId).orElse(null)));
+	public ResponseEntity<ProductOrder> getOrder(@PathVariable Long orderId ) throws ProductorderNotFoundException {
+		return ResponseEntity.of(Optional.ofNullable(this.productOrderRepository.findById(orderId)
+				.orElseThrow(() -> new ProductorderNotFoundException(orderId))));
 	}
 
 	@GetMapping("/all")

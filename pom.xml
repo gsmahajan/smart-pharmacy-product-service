@@ -159,7 +159,7 @@
 						<configuration>
 						 	<mainClass>com.aiocdawacs.smart.admin.smartpharmacyproductservice.SmartPharmacyProductServiceApplication</mainClass>
 							<buildArgs>-J-Xmx4G -H:+TraceClassInitialization -H:+ReportExceptionStackTraces -Dspring.native.remove-unused-autoconfig=true -Dspring.native.remove-yaml-support=true</buildArgs>
-							<imageName>${project.artifactId}</imageName>
+							<imageName>productservice</imageName>
 						</configuration>
 						<executions>
 							<execution>
@@ -178,4 +178,8 @@
 			</build>
 		</profile>
 	</profiles>
+	<organization>
+		<name>awacs.com</name>
+		<url>awacs.com</url>
+	</organization>
 </project>
