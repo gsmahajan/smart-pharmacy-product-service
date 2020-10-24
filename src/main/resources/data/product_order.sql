@@ -1,4 +1,4 @@
-INSERT INTO PRODUCT_ORDER (ID, PRODUCT_ID, DISTRIBUTOR_ID, PHARMASIST_ID, CREATION_DATE, QUANTITY, ORDER_STATUS) values (1,1000,50,1,CURRENT_TIMESTAMP, 20, true);
-INSERT INTO PRODUCT_ORDER (ID, PRODUCT_ID, DISTRIBUTOR_ID, PHARMASIST_ID, CREATION_DATE, QUANTITY, ORDER_STATUS) values (2,837,21,1,CURRENT_TIMESTAMP, 30, true);
-INSERT INTO PRODUCT_ORDER (ID, PRODUCT_ID, DISTRIBUTOR_ID, PHARMASIST_ID, CREATION_DATE, QUANTITY, ORDER_STATUS) values (3,1000,23,2,CURRENT_TIMESTAMP, 130, true);
-INSERT INTO PRODUCT_ORDER (ID, PRODUCT_ID, DISTRIBUTOR_ID, PHARMASIST_ID, CREATION_DATE, QUANTITY, ORDER_STATUS) values (4,837,24,2,CURRENT_TIMESTAMP, 300, true);
+insert into product_order (id, product_id, distributor_id, pharmasist_id, creation_date, quantity, order_status) values (1,1000,50,1,current_timestamp, 20, true);
+insert into product_order (id, product_id, distributor_id, pharmasist_id, creation_date, quantity, order_status) values (2,837,21,1,current_timestamp, 30, true);
+insert into product_order (id, product_id, distributor_id, pharmasist_id, creation_date, quantity, order_status) values (3,1000,23,2,current_timestamp, 130, true);
+insert into product_order (id, product_id, distributor_id, pharmasist_id, creation_date, quantity, order_status) values (4,837,24,2,current_timestamp, 300, true);

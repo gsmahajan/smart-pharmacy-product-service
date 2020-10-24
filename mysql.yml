@@ -8,6 +8,7 @@ services:
     restart: always
     ports: [3306:3306]
     environment:
+      MYSQL_DATABASE: AWACS_SMART_PHARMACY
       MYSQL_ROOT_PASSWORD: root123
     deploy:
       mode: replicated
