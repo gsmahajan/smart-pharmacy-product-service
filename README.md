@@ -1,6 +1,9 @@
 # smart-pharmacy-product-service
 
+![Java CI with Maven](https://github.com/girishaiocdawacs/smart-pharmacy-product-service/workflows/Java%20CI%20with%20Maven/badge.svg?branch=master)
+
 ### run mysql
+
 ```
 giris@DESKTOP-45UA338 MINGW64 /d/aiocd-workspace/java-workspace/smart-pharmacy-product-service (master)
 $ docker-compose -f mysql.yml up
