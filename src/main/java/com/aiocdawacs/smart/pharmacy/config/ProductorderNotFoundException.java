@@ -1,4 +1,4 @@
-package com.aiocdawacs.smart.admin.smartpharmacyproductservice.config;
+package com.aiocdawacs.smart.pharmacy.config;
 
 public class ProductorderNotFoundException extends Exception {
 

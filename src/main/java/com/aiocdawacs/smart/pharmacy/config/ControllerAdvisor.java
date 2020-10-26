@@ -1,4 +1,4 @@
-package com.aiocdawacs.smart.admin.smartpharmacyproductservice.config;
+package com.aiocdawacs.smart.pharmacy.config;
 
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;

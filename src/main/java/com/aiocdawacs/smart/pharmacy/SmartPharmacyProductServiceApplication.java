@@ -1,4 +1,4 @@
-package com.aiocdawacs.smart.admin.smartpharmacyproductservice;
+package com.aiocdawacs.smart.pharmacy;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

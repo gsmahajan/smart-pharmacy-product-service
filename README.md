@@ -89,7 +89,7 @@ GraalVM Version 20.2.0 (Java Version 11.0.8)
 
 
 
-native-image -cp ./target/smart-pharmacy-product-service-0.0.1-SNAPSHOT.jar -H:Name=productservice -H:Class=com.aiocdawacs.smart.admin.smartpharmacyproductservice.SmartPharmacyProductServiceApplication -H:+ReportUnsupportedElementsAtRuntime -H:+ReportExceptionStackTraces -H:-CheckToolchain --allow-incomplete-classpath
+native-image -cp ./target/smart-pharmacy-product-service-0.0.1-SNAPSHOT.jar -H:Name=productservice -H:Class=com.aiocdawacs.smart.pharmacy.SmartPharmacyProductServiceApplication -H:+ReportUnsupportedElementsAtRuntime -H:+ReportExceptionStackTraces -H:-CheckToolchain --allow-incomplete-classpath
 
 
 

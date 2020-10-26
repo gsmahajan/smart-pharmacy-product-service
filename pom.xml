@@ -29,7 +29,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<start-class>
-			com.aiocdawacs.smart.admin.smartpharmacyproductservice.SmartPharmacyProductServiceApplication
+			com.aiocdawacs.smart.pharmacy.SmartPharmacyProductServiceApplication
 		</start-class>
 		<java.version>1.8</java.version>
 	</properties>
@@ -168,7 +168,7 @@
 						<artifactId>native-image-maven-plugin</artifactId>
 						<version>20.2.0</version>
 						<configuration>
-							<mainClass>com.aiocdawacs.smart.admin.smartpharmacyproductservice.SmartPharmacyProductServiceApplication</mainClass>
+							<mainClass>com.aiocdawacs.smart.pharmacy.SmartPharmacyProductServiceApplication</mainClass>
 							<buildArgs>-J-Xmx4G -H:+TraceClassInitialization
 								-H:+ReportExceptionStackTraces
 								-Dspring.native.remove-unused-autoconfig=true
