@@ -9,7 +9,7 @@
 		<version>2.3.4.RELEASE</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	
+
 	<repositories>
 		<repository>
 			<id>spring-milestones</id>
@@ -17,14 +17,17 @@
 			<url>https://repo.spring.io/milestone</url>
 		</repository>
 	</repositories>
-	
+
 	<groupId>com.aiocdawacs.smart.admin</groupId>
 	<artifactId>smart-pharmacy-product-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>smart-pharmacy-product-service</name>
 	<description>Smart Pharmacy</description>
 
+
 	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<start-class>
 			com.aiocdawacs.smart.admin.smartpharmacyproductservice.SmartPharmacyProductServiceApplication
 		</start-class>
@@ -44,6 +47,14 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-activemq</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -62,24 +73,24 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<scope>runtime</scope>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.springframework.experimental</groupId>
 			<artifactId>spring-graal-native</artifactId>
 			<version>0.6.1.RELEASE</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context-indexer</artifactId>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -157,8 +168,11 @@
 						<artifactId>native-image-maven-plugin</artifactId>
 						<version>20.2.0</version>
 						<configuration>
-						 	<mainClass>com.aiocdawacs.smart.admin.smartpharmacyproductservice.SmartPharmacyProductServiceApplication</mainClass>
-							<buildArgs>-J-Xmx4G -H:+TraceClassInitialization -H:+ReportExceptionStackTraces -Dspring.native.remove-unused-autoconfig=true -Dspring.native.remove-yaml-support=true</buildArgs>
+							<mainClass>com.aiocdawacs.smart.admin.smartpharmacyproductservice.SmartPharmacyProductServiceApplication</mainClass>
+							<buildArgs>-J-Xmx4G -H:+TraceClassInitialization
+								-H:+ReportExceptionStackTraces
+								-Dspring.native.remove-unused-autoconfig=true
+								-Dspring.native.remove-yaml-support=true</buildArgs>
 							<imageName>productservice</imageName>
 						</configuration>
 						<executions>

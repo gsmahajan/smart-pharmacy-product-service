@@ -1,0 +1,18 @@
+version: '3.1'
+
+services:
+
+  jms:
+    image: webcenter/activemq:latest
+    restart: always
+    ports: 
+      - 61616:61616
+      - 8161:8161
+      - 61613:61613
+    environment:
+      ACTIVEMQ_ADMIN_LOGIN: admin 
+      ACTIVEMQ_ADMIN_PASSWORD: admin123
+      ACTIVEMQ_CONFIG_QUEUES_controller.events.error: controller.events.error
+    deploy:
+      mode: replicated
+      replicas: 2

@@ -1,7 +1,6 @@
 
 package com.aiocdawacs.smart.admin.smartpharmacyproductservice.controller;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -26,8 +25,8 @@ public class ProductOrderController {
 	ProductOrderRepository productOrderRepository;
 
 	@PostMapping("/makeOrder")
-	public List<ProductOrder> makeOrder(@RequestBody ProductOrder o ){
-		return Arrays.asList(this.productOrderRepository.save(o));
+	public Optional<ProductOrder> makeOrder(@RequestBody ProductOrder o ){
+		return Optional.of(this.productOrderRepository.save(o));
 	}
 
 	@GetMapping("/{orderId}")
