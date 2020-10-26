@@ -110,7 +110,7 @@
 					<plugin>
 						<groupId>org.graalvm.nativeimage</groupId>
 						<artifactId>native-image-maven-plugin</artifactId>
-						<version>20.0.0</version>
+						<version>20.2.0</version>
 						<configuration>
 							<buildArgs>
 								-Dspring.graal.mode=initialization-only
