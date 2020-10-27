@@ -31,7 +31,7 @@
 		<start-class>
 			com.aiocdawacs.smart.pharmacy.SmartPharmacyProductServiceApplication
 		</start-class>
-		<java.version>11</java.version>
+		<java.version>8</java.version>
 		<sonar.projectKey>girishaiocdawacs_smart-pharmacy-product-service</sonar.projectKey>
 		<sonar.organization>girishaiocdawacs</sonar.organization>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
