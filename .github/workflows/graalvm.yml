@@ -1,0 +1,22 @@
+name: Graal Native Image 
+on:
+  push:
+    branches:
+      - 'master'
+jobs:
+  nativeimage:
+    name: Maven Graal Native Image creation
+    runs-on: macos-latest
+       
+    steps:
+      - uses: actions/checkout@v1
+      - name: Set up GraalVM
+      - uses: DeLaGuardo/setup-graalvm@master
+        with:
+          graalvm-version: '19.3.0.java8'
+      - name: Java version check
+      - run: java -version && gu list
+      - name: Installing native-image CLI
+        run: gu install native-image
+      - name: Creating native image for spring boot
+      - run: mvn clean package -Pgraal
