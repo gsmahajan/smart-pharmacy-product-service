@@ -176,41 +176,9 @@
 				</plugins>
 			</build>
 		</profile>
-		<profile>
-			<id>native</id>
-			<build>
-				<plugins>
-					<plugin>
-						<groupId>org.graalvm.nativeimage</groupId>
-						<artifactId>native-image-maven-plugin</artifactId>
-						<version>20.2.0</version>
-						<configuration>
-							<mainClass>com.aiocdawacs.smart.pharmacy.SmartPharmacyProductServiceApplication</mainClass>
-							<buildArgs>-J-Xmx4G -H:+TraceClassInitialization
-								-H:+ReportExceptionStackTraces
-								-Dspring.native.remove-unused-autoconfig=true
-								-Dspring.native.remove-yaml-support=true</buildArgs>
-							<imageName>productservice</imageName>
-						</configuration>
-						<executions>
-							<execution>
-								<goals>
-									<goal>native-image</goal>
-								</goals>
-								<phase>package</phase>
-							</execution>
-						</executions>
-					</plugin>
-					<plugin>
-						<groupId>org.springframework.boot</groupId>
-						<artifactId>spring-boot-maven-plugin</artifactId>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
 	</profiles>
 	<organization>
-		<name>awacs.com</name>
-		<url>awacs.com</url>
+		<name>aiocdawacs.com</name>
+		<url>aiocdawacs</url>
 	</organization>
 </project>
