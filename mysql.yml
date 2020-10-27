@@ -13,4 +13,4 @@ services:
       MYSQL_ROOT_PASSWORD: root123
     deploy:
       mode: replicated
-      replicas: 2
+      replicas: 10

@@ -1,4 +1,4 @@
--- in case mysql
+-- in case mysql is unable to create database in the big-bang
 
 -- DROP database AWACS_SMART_PHARMACY;
 
