@@ -17,8 +17,12 @@ import com.aiocdawacs.smart.pharmacy.config.ProductorderNotFoundException;
 import com.aiocdawacs.smart.pharmacy.model.ProductOrder;
 import com.aiocdawacs.smart.pharmacy.repository.ProductOrderRepository;
 
+import io.swagger.annotations.Api;
+
 @RestController
 @RequestMapping("/product/order")
+@Api(value="smart_pharmacy", description="Product Order Distributor & Pharmacy")
+
 public class ProductOrderController {
 
 	@Autowired

@@ -140,6 +140,7 @@ class ControllerErrorEvent extends ApplicationEvent{
 	}
 }
 
+
 class ControllerErrorEventBuilder {
 	static ControllerErrorEvent build(String b){
 		ControllerErrorEvent e = new ControllerErrorEvent(b);
@@ -157,4 +158,10 @@ class ErrorReporterToJms implements ApplicationListener<ControllerErrorEvent> {
 	public void onApplicationEvent(ControllerErrorEvent event) {
 		jmsTemplate.convertAndSend("controller.events.error", event);
 	}
+	
+	/*
+	 * @JmsListener(destination = "controller.events.error") public void
+	 * subscribeJms(Message<ApplicationEvent> e) {
+	 * System.out.println("Message Received - "+ e.getPayload().getSource()); }
+	 */
 }
