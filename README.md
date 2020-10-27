@@ -4,6 +4,8 @@
 
 ![Java CI with Maven](https://github.com/girishaiocdawacs/smart-pharmacy-product-service/workflows/.github/workflows/maven.yml/badge.svg)
 
+![Native Image GraalVM](https://github.com/girishaiocdawacs/smart-pharmacy-product-service/workflows/.github/workflows/graalvm.yml/badge.svg)
+
 ### run mysql
 
 ```
