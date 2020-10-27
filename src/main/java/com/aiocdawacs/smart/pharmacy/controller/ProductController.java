@@ -13,7 +13,7 @@ import com.aiocdawacs.smart.pharmacy.model.Product;
 import com.aiocdawacs.smart.pharmacy.repository.ProductRepository;
 
 @RestController
-@RequestMapping("/product")
+@RequestMapping("/api/product")
 public class ProductController {
 
     @Autowired

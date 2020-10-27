@@ -20,7 +20,7 @@ import com.aiocdawacs.smart.pharmacy.repository.ProductOrderRepository;
 import io.swagger.annotations.Api;
 
 @RestController
-@RequestMapping("/product/order")
+@RequestMapping("/api/product/order")
 @Api(value="smart_pharmacy", description="Product Order Distributor & Pharmacy")
 
 public class ProductOrderController {
