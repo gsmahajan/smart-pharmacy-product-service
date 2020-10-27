@@ -1,6 +1,6 @@
 # smart-pharmacy-product-service
 
-![Java CI with Maven](https://github.com/girishaiocdawacs/smart-pharmacy-product-service/workflows/Java%20CI%20with%20Maven/badge.svg?branch=master)
+![Java CI with Maven](https://github.com/girishaiocdawacs/smart-pharmacy-product-service/workflows/.github/workflows/maven.yml/badge.svg)
 
 ### run mysql
 
