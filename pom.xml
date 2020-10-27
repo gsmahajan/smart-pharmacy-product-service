@@ -31,7 +31,7 @@
 		<start-class>
 			com.aiocdawacs.smart.pharmacy.SmartPharmacyProductServiceApplication
 		</start-class>
-		<java.version>1.8</java.version>
+		<java.version>11</java.version>
 	</properties>
 
 	<dependencies>
