@@ -1,4 +1,4 @@
-name: Master Branch
+name: AWACS Build
 
 on:
   push:
@@ -8,7 +8,7 @@ on:
 jobs:
   test:
     name: Test - Units & Integrations
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v1
@@ -20,15 +20,19 @@ jobs:
         run: mvn -B clean package 
 
   nativeimage:
-  	name: Maven Graal Native Image creation
-	steps:
-	- uses: actions/checkout@latest
-	- uses: DeLaGuardo/setup-graalvm@master
-	  with:
-	    graalvm-version: '19.3.0.java8' // GraalVM version, no pattern syntax available atm.
-	- run: java -version && gu list
-	- run: gu install native-image
-	- run: mvn clean package -Pgraal
+       name: Maven Graal Native Image creation
+       runs-on: macos-latest
+       
+       steps:
+         - uses: actions/checkout@v1
+         - uses: DeLaGuardo/setup-graalvm@master
+           with:
+             graalvm-version: '19.3.0.java8'
+         - run: java -version && gu list
+         - name: Installing native-image CLI
+           run: gu install native-image
+         - name: Creating native image for spring boot
+         - run: mvn clean package -Pgraal
 
   sonar:
     name: Test - SonarCloud Scan
