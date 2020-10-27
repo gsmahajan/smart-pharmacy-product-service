@@ -9,7 +9,7 @@ jobs:
 
   test:
     name: Test - Units & Integrations
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v1
@@ -19,7 +19,7 @@ jobs:
           java-version: 11.0.4
       - name: Maven Package
         run: mvn -B clean package 
-      - name: Maven Graal Native Image creation
+      - name: Maven Graal Native Image creation (Ubuntu)
         run: mvn -B clean package -Pgraal
 
   sonar:
