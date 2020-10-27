@@ -13,5 +13,5 @@ jobs:
         uses: DeLaGuardo/setup-graalvm@master
         with:
           graalvm-version: '19.3.0.java8'
-      - name: Java version check
+      - name: Generate Graal Native Image
         run: java -version && gu list && gu install native-image && mvn -B clean package -Pgraal
