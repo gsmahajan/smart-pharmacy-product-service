@@ -4,7 +4,7 @@
 
 ![Maven Build](https://github.com/girishaiocdawacs/smart-pharmacy-product-service/workflows/Maven%20Build/badge.svg?branch=master)
 
-![Native Image GraalVM](https://github.com/girishaiocdawacs/smart-pharmacy-product-service/workflows/.github/workflows/graalvm.yml/badge.svg?branch=master)
+![Graal Native Image](https://github.com/girishaiocdawacs/smart-pharmacy-product-service/workflows/Graal%20Native%20Image/badge.svg?branch=master)
 
 ## run mysql
 
