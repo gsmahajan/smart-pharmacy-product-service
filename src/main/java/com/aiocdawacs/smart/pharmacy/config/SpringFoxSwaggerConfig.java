@@ -23,7 +23,6 @@ public class SpringFoxSwaggerConfig extends WebMvcConfigurationSupport {
 				.apis(RequestHandlerSelectors.any())              
 				.paths(PathSelectors.ant("/api/**"))                          
 				.build().apiInfo(metaData());                                          
-		
 	}
 	
 	private ApiInfo metaData() {

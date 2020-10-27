@@ -6,7 +6,7 @@
 
 ![Native Image GraalVM](https://github.com/girishaiocdawacs/smart-pharmacy-product-service/workflows/.github/workflows/graalvm.yml/badge.svg?branch=master)
 
-### run mysql
+## run mysql
 
 ```
 giris@DESKTOP-45UA338 MINGW64 /d/aiocd-workspace/java-workspace/smart-pharmacy-product-service (master)
@@ -57,9 +57,13 @@ db_1  | 2020-10-24T15:20:23.818064Z 0 [Warning] [MY-011810] [Server] Insecure co
 
 ```
 
-###to run the service
+### to run API
 ```
 mvn spring-boot:run 
+
+
+swagger is available here - http://localhost:8080/swagger-ui.html#/
+
 ```
 
 
