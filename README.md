@@ -1,5 +1,7 @@
 # smart-pharmacy-product-service
 
+![Sonar Cloud](https://github.com/girishaiocdawacs/smart-pharmacy-product-service/workflows/Sonar%20Cloud/badge.svg?branch=master)
+
 ![Java CI with Maven](https://github.com/girishaiocdawacs/smart-pharmacy-product-service/workflows/.github/workflows/maven.yml/badge.svg)
 
 ### run mysql
