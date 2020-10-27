@@ -2,9 +2,9 @@
 
 ![Sonar Cloud](https://github.com/girishaiocdawacs/smart-pharmacy-product-service/workflows/Sonar%20Cloud/badge.svg?branch=master)
 
-![Java CI with Maven](https://github.com/girishaiocdawacs/smart-pharmacy-product-service/workflows/.github/workflows/maven.yml/badge.svg)
+![Maven Build](https://github.com/girishaiocdawacs/smart-pharmacy-product-service/workflows/Maven%20Build/badge.svg?branch=master)
 
-![Native Image GraalVM](https://github.com/girishaiocdawacs/smart-pharmacy-product-service/workflows/.github/workflows/graalvm.yml/badge.svg)
+![Native Image GraalVM](https://github.com/girishaiocdawacs/smart-pharmacy-product-service/workflows/.github/workflows/graalvm.yml/badge.svg?branch=master)
 
 ### run mysql
 
