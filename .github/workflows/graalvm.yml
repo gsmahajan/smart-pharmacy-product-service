@@ -15,7 +15,7 @@ jobs:
       - name: Generate Graal Native Image
         run: java -version && gu list && gu install native-image && mvn -B clean package -Pgraal
       - name: upload native image package on release
-      - run: ls -lrta && mkdir staging && cp target/com*application staging && ls -lrta staging && ./staging/com*
+      - run: ls -lrta && mkdir staging && cp target/com*application staging && ls -lrta staging
       - uses: actions/upload-artifact@v2
         with:
           name: Package
