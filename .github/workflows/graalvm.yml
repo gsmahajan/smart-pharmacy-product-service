@@ -14,4 +14,9 @@ jobs:
         with:
           graalvm-version: '20.0.0.java11'
       - name: Generate Graal Native Image
-        run: java -version && gu list && gu install native-image && mvn -B clean package -Pgraal
+        run: java -version && gu list && gu install native-image && mvn -B clean package -Pgraal && ./com.aiocdawacs.smart.pharmacy.smartpharmacyproductserviceapplication
+        
+      - name: Create tarball
+        run: tar -zcvf "awacs-ubuntu-latest.tar.gz" com.aiocdawacs.smart.pharmacy.smartpharmacyproductserviceapplication
+        run: ls -lrta
+        
