@@ -1,8 +1,7 @@
 name: Graal Native Image 
 on:
   release:
-    branches:
-      - 'master'
+    types: [created]
 jobs:
   build:
     name: Maven Graal Native Image creation
