@@ -17,4 +17,4 @@ RUN source "$HOME/.sdkman/bin/sdkman-init.sh" && mvn --version
 RUN native-image --version
  
 # Always use source sdkman-init.sh before any command, so that we will be able to use 'mvn' command
-ENTRYPOINT bash -c "source $HOME/.sdkman/bin/sdkman-init.sh && $0"
+ENTRYPOINT bash -c "source $HOME/.sdkman/bin/sdkman-init.sh && mvn -U clean package -Pgraal"
