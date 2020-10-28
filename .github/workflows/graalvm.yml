@@ -1,7 +1,8 @@
 name: Graal Native Image 
 on:
-  release:
-    types: [created]
+  push:
+    branches:
+      - 'master'
 jobs:
   build:
     name: Maven Graal Native Image creation
@@ -14,9 +15,3 @@ jobs:
           graalvm-version: '20.2.0.java8'
       - name: Generate Graal Native Image
         run: java -version && gu list && gu install native-image && mvn -B clean package -Pgraal
-      - name: upload native image package on release
-      - run: ls -lrta && mkdir staging && cp target/com*application staging && ls -lrta staging
-      - uses: actions/upload-artifact@v2
-        with:
-          name: Package
-          path: staging
