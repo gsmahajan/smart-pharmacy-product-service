@@ -17,9 +17,15 @@ jobs:
         with:
           graalvm-version: '20.2.0.java8'
       - name: Generate Graal Native Image
-        run: java -version && gu list && gu install native-image && mvn -B clean package -Pgraal
+        run: |
+         java -version 
+         gu list 
+         gu install native-image 
+         mvn -B clean package -Pgraal
       - name: Upload package to download 
-        run: mkdir staging && cp target/com*application staging && ls -lrta staging
+        run: |
+         mkdir staging 
+         cp target/com*application staging 
       - uses: actions/upload-artifact@v2
         with:
           name: NativeImagePackage_${{ matrix.os }}
