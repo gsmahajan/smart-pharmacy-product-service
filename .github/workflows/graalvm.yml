@@ -6,7 +6,10 @@ on:
 jobs:
   build:
     name: Maven Graal Native Image creation
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix: 
+        os: [ubuntu-latest, windows-latest, macos-latest]
     steps:
       - uses: actions/checkout@v1
       - name: Set up GraalVM
@@ -19,5 +22,5 @@ jobs:
         run: mkdir staging && cp target/com*application staging && ls -lrta staging
       - uses: actions/upload-artifact@v2
         with:
-          name: NativeImagePackageUbuntu
+          name: NativeImagePackage_${{ matrix.os }}
           path: staging
