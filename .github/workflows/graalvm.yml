@@ -5,7 +5,7 @@ on:
       - 'master'
 jobs:
   build:
-    name: Maven Graal Native Image creation
+    name: Build
     runs-on: ${{ matrix.os }}
     strategy:
       matrix: 
