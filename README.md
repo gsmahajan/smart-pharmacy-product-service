@@ -6,6 +6,8 @@
 
 ![Graal Native Image Release](https://github.com/girishaiocdawacs/smart-pharmacy-product-service/workflows/Graal%20Native%20Image%20Release/badge.svg)
 
+[![Codefresh build status]( https://g.codefresh.io/api/badges/pipeline/girishaiocdawacs_marketplace/default%2FMyPipeline?type=cf-2&key=eyJhbGciOiJIUzI1NiJ9.NWY5OTMzMWM5YTdmMGIzYzJhNWQ2NTgx.SzhPoO2dxvIAa_ERUvn8rq88JT3i9f4xm8BRFxHouP0)]( https://g.codefresh.io/pipelines/edit/new/builds?id=5f99340ae8742c223774c89e&pipeline=MyPipeline&projects=default&projectId=5f99334d107bb51ed4b824ab)
+
 ## run mysql
 
 ```
