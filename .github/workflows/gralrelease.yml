@@ -1,7 +1,7 @@
 name: Graal Native Image Release 
 on:
   release: 
-    type: released   
+    type: [published] 
 jobs:
   build:
     name: Build
@@ -24,7 +24,8 @@ jobs:
       - name: Upload package to download 
         run: |
          mkdir staging 
-         cp target/com*application staging 
+         cp target/com*application staging
+         ls -lh staging 
       - uses: actions/upload-artifact@v2
         with:
           name: NativeImagePackage_${{ matrix.os }}
