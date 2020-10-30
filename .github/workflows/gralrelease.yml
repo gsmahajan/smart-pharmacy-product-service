@@ -1,6 +1,6 @@
 name: Graal Native Image Release 
 on:
-  realease: [created]
+  release: [created]
 jobs:
   build:
     name: Build
