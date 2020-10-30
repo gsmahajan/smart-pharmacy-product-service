@@ -1,6 +1,9 @@
 name: Graal Native Image Release 
 on:
-  release: [created]
+  release: 
+    type: created
+  schedule:
+    - cron:  '0 */6 * * *'    
 jobs:
   build:
     name: Build
